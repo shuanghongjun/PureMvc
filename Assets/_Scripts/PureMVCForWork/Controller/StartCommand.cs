@@ -8,7 +8,7 @@ public class StartCommand : SimpleCommand
 {
     public override void Execute(INotification notification)
     {
-        //create ui
+
         GameObject obj = GameObjectUtility.Instance.CreateGameObject("_Prefabs/TimePanelView");
         obj.SetActive(true);
         //bind mediator

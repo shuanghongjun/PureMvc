@@ -22,8 +22,9 @@ public class MyFacadeWork : Facade
         this.RegisterProxy(new TimeDataProxy());
         RegisterCommand(TIME_START, typeof(StartCommand));
         RegisterCommand(TIME_GET, typeof(TimeCommand));
-        RegisterCommand(TIME_REFRESH_UI, typeof(TimeRefreshCommand));
+        //RegisterCommand(TIME_REFRESH_UI, typeof(TimeRefreshCommand));
         //
         SendNotification(TIME_START);
     }
+   
 }

@@ -20,33 +20,39 @@ public class TimePanelMediator : Mediator
         //绑定按钮事件
         View.Refresh_Time.onClick.AddListener(OnClickBack);
     }
-    //public override IList<string> ListNotificationInterests()
-    //{
-    //    IList<string> list = new List<string>()
-    //{ MyFacade.UPDATE_REWARD_TIP_VIEW};
-
-    //    return list;
-    //}
-    //public override DateTime RefreshTime()
-    //{
-    //    DateTime time = new DateTime
-    //    (){ MyFacadeWork.TIME_REFRESH_UI};
-
-    //    return time;
-    //}
-    public void GetText(INotification notification)
+    public override IList<string> ListNotificationInterests()
     {
-        Debug.Log(notification.Name);
+        IList<string> list = new List<string>()
+    { MyFacadeWork.TIME_REFRESH_UI};
+
+        return list;
+    }
+    public override void HandleNotification(INotification notification)
+    {
         switch (notification.Name)
         {
             case MyFacadeWork.TIME_REFRESH_UI:
-                Debug.Log(111);
+
                 string text = notification.Body.ToString();
                 //update text
                 View.SetText(text);
+
                 break;
         }
     }
+    //public void GetText(INotification notification)
+    //{
+    //    Debug.Log(notification.Name);
+    //    switch (notification.Name)
+    //    {
+    //        case MyFacadeWork.TIME_REFRESH_UI:
+    //            Debug.Log(111);
+    //            string text = notification.Body.ToString();
+    //            //update text
+    //            View.SetText(text);
+    //            break;
+    //    }
+    //}
     private void OnClickBack()
     {
         Debug.Log("开始更新");

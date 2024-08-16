@@ -8,9 +8,9 @@ public class TimeRefreshCommand : SimpleCommand
 {
     public override void Execute(INotification notification)
     {
-        Debug.Log(notification.Body);
-        TimePanelMediator mediator= Facade.RetrieveMediator(TimePanelMediator.NAME) as TimePanelMediator;
+        //Debug.Log(notification.Body);
+        //TimePanelMediator mediator= Facade.RetrieveMediator(TimePanelMediator.NAME) as TimePanelMediator;
 
-        mediator.GetText(notification);
+        //mediator.GetText(notification);
     }
 }
