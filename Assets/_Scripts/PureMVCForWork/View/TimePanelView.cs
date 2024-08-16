@@ -10,11 +10,13 @@ public class TimePanelView : MonoBehaviour
     public Text Time_Text;
     private void Start()
     {
-        TimePanelMediator me = new TimePanelMediator(this.gameObject );
+        // TimePanelMediator me = new TimePanelMediator(this.gameObject );
         //Facade.RegisterMediator(new MainPanelMediator(GameObject.Find("TimePanelView").gameObject));
     }
     public void SetText(string time)
     {
+        Debug.Log("当前时间");
+        Debug.Log(time);
         Time_Text.text = time;
     }
 }

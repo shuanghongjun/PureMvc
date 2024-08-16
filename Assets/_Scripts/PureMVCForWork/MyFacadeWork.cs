@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MyFacadeWork : Facade
 {
+    public const string TIME_START = "start_time";
     public const string TIME_GET = "get_time";
     public const string TIME_REFRESH_UI = "refresh_time";
     static MyFacadeWork()
@@ -19,8 +20,10 @@ public class MyFacadeWork : Facade
         Debug.Log("框架开启");
 
         this.RegisterProxy(new TimeDataProxy());
+        RegisterCommand(TIME_START, typeof(StartCommand));
         RegisterCommand(TIME_GET, typeof(TimeCommand));
         RegisterCommand(TIME_REFRESH_UI, typeof(TimeRefreshCommand));
         //
+        SendNotification(TIME_START);
     }
 }

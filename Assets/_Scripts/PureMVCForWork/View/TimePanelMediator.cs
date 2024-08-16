@@ -36,10 +36,12 @@ public class TimePanelMediator : Mediator
     //}
     public void GetText(INotification notification)
     {
+        Debug.Log(notification.Name);
         switch (notification.Name)
         {
             case MyFacadeWork.TIME_REFRESH_UI:
-                string text = notification.Body as string;
+                Debug.Log(111);
+                string text = notification.Body.ToString();
                 //update text
                 View.SetText(text);
                 break;

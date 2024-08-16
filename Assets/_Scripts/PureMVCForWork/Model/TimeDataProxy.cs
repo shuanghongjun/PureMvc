@@ -18,6 +18,5 @@ public class TimeDataProxy : Proxy
     {
         _time = DateTime.Now;
         MyFacadeWork.GetInstance().SendNotification(MyFacadeWork.TIME_REFRESH_UI,this.Time);
-
     }
 }
